@@ -1,0 +1,470 @@
+/* --------------------------------------- Globals --------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 18px;
+    line-height: 2.0;
+  }
+
+h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+h3 {
+    font-size: 40px;
+    margin-bottom: 5px;
+    margin-top: 1px;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(95,108,205,1) 0%, rgba(0,0,0,1) 100%) 
+     no-repeat;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+/* -------------------X------------------- Globals --------------------X------------------ */
+
+/* --------------------------------------- Nav Bar --------------------------------------- */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* Nav menu */
+.navbar {
+    overflow: hidden;
+    font-weight: 700;
+    padding: 0 50px;
+}
+
+/* Nav links */
+.navbar a {
+    float: left;
+    font-size: 16px;
+    text-align: center; 
+    padding: 10px 16px;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+/* ----------------- Logo styling ----------------- */
+/* Brand logo */
+.brand-logo {
+    width: 100%;
+    padding: 0;
+    margin: 10px 0;
+}
+
+img.brand-logo {
+    height: 60px;
+}
+
+img.brand-logo:hover {
+    height: 60px;
+    filter: drop-shadow(20px 10px 3px #181867);
+}
+/* --------X-------- Logo styling --------X-------- */
+
+/* Subnav menu */
+.subnav {
+    float: left;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* Subnav button */
+.subnav .subnav-btn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: inherit;
+    margin: 0;
+    font-weight: 700;
+    border-radius: 20px;
+  }
+
+/* Add a black background color to nav links on hover */
+.navbar a:hover, .subnav:hover .subnav-btn {
+    background-color: rgba(0, 0, 0, 0.674);
+}
+
+/* Styling the subnav content */
+.subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.674);
+    width: 100%;
+    z-index: 1;
+    text-transform: uppercase;
+    border-radius: 20px;
+}
+
+/* Styling the subnav links */
+.subnav-content a {
+    float: left;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Adding a yellow background color on hover */
+.subnav-content a:hover {
+    background-color: #FFF853;
+    color: black;
+}
+
+/* open the subnav content on hover*/
+.subnav:hover .subnav-content {
+    display: block;
+}
+
+.header-fixed a.navbar-first-right {
+    margin-right: 180px;
+    position: absolute;
+    right: 10px;
+}
+
+.header-fixed a.navbar-right {
+    margin-right: 50px;
+    position: absolute;
+    right: 10px;
+}
+/* -------------------X------------------- Nav Bar --------------------X------------------ */
+
+/* --------------------------------------- Index/About Page --------------------------------------- */
+.main {
+    margin-top: 23vh;
+    height: 77vh;
+    width: 75%;
+    margin: 23vh auto 0 auto;
+}
+
+.main  p {
+    width: 50%;
+    text-align: justify;
+}
+
+#index-main p {
+    width: 50%;
+    margin: auto;
+    text-align: justify;
+}
+
+#index-main ul {
+    list-style: none;
+}
+
+#index-main li {
+    font-size: 28.8px;
+    font-weight: 500;
+}
+
+.index-img {
+    width: 550px;
+    border-radius: 50px;
+    filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.629));
+}
+
+.main-text {
+    box-sizing: border-box;
+    display: none;
+    height: 353px;
+    border: 2px solid #fff;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.348);
+    border-radius: 20px;
+}
+
+.img-group {
+    width: max-content;
+    margin: auto;
+    height: 353px;
+}
+
+.img-group figcaption {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ebe77f;
+}
+
+.img-group:hover + .main-text {
+    display: block;
+}
+
+.img-group:hover {
+    display: none;
+}
+
+#to-sign {
+    border-radius: 10px;
+    padding: 4px 20px;
+    width: max-content;
+    display: block;
+    text-decoration: none;
+}
+
+#to-sign:hover {
+    border: 2px solid #000;
+}
+
+.secondary-content {
+    padding-top: 23vh;
+    height: 77vh;
+    background: inherit;
+    width: 100%;
+}
+
+.secondary-content  p {
+    width: 50%;
+    margin: auto;
+    text-align: justify;
+}
+
+/* For signature */
+#signature {
+    font-family: 'Mrs Saint Delafield', cursive;
+    font-size: 40px;
+    padding: 0 10px;
+}
+/* -------------------X------------------- Index/About Page --------------------X------------------ */
+
+/* --------------------------------------- Contact Us Page --------------------------------------- */
+/* Form Styling */
+form {
+    font-weight: 500;
+    width: 50%;
+    margin: 50px auto;
+}
+
+input, #device_type, select {
+    border: solid 2px #000;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    padding: 2px 15px;
+    color: rgb(59, 58, 58);
+    width: 80%;
+}
+
+#device_type, select {
+    padding: 8px 0;
+    width: 85%;
+}
+
+form > #msg {
+    height: 50px;
+    width: 80%;
+}
+
+.input-btn {
+    color: #fff;
+    margin-top: 15px;
+    background-color: #000;
+    width: 25%;
+    font-weight: 600;
+    border: 1px solid #fff;
+}
+
+.input-btn:hover {
+    background-color: #FFF853;
+    color: #000;
+    border: 1px solid #000;
+}
+/* -------------------X------------------- Contact Us Page --------------------X------------------ */
+
+/* --------------------------------------- Add Device Page --------------------------------------- */
+/* Form styling */
+#add-btn:hover {
+    background-color: #338f5f;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+/* Editing forms */
+.ch-system, .curtains-blinds, .lights, .av-system, .kitchen {
+    display: none;
+}
+
+#pick-color {
+    display: none;
+    height: 45px; 
+    width: 85%; 
+    padding: 0 5px;
+}
+
+/* Sliders */
+#temp, #speed, #brightness, #volume {
+    -webkit-appearance: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.997);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+#temp:hover, #speed:hover, #brightness:hover, #volume:hover {
+    opacity: 1;
+}
+
+/* Removing default settings + setting own */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 34.5px;
+    height: 36px;
+    border: 0;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 34.5px;
+    height: 36px;
+    border: 0;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+/* Using designed icons */
+#temp::-webkit-slider-thumb {
+    background-image: url('./images/temp.svg');
+}
+
+#temp::-moz-range-thumb {
+    background-image: url('./images/temp.svg');
+}
+
+#speed::-webkit-slider-thumb {
+    background-image: url('./images/speed.svg');
+}
+
+#speed::-moz-range-thumb {
+    background-image: url('./images/speed.svg');
+}
+
+#brightness::-webkit-slider-thumb {
+    background-image: url('./images/brightness.svg');
+}
+
+#brightness::-moz-range-thumb {
+    background-image: url('./images/brightness.svg');
+}
+
+#volume::-webkit-slider-thumb {
+    background-image: url('./images/volume.svg');
+}
+
+#volume::-moz-range-thumb {
+    background-image: url('./images/volume.svg');
+}
+/* -------------------X------------------- Add Device Page --------------------X------------------ */
+
+/* --------------------------------------- Delete Device Page --------------------------------------- */
+/* Form styling */
+#del-btn:hover {
+    background-color: #a32020;
+    color: #fff;
+    border: 1px solid #fff;
+}
+/* -------------------X------------------- Delete Device Page --------------------X------------------ */
+
+/* --------------------------------------- Control Device Page --------------------------------------- */
+/* Form styling */
+#control-btn:hover {
+    background-color: #b1489a;
+    color: #fff;
+    border: 1px solid #fff;
+}
+/* -------------------X------------------- Control Device Page --------------------X------------------ */
+
+/* --------------------------------------- Status Page --------------------------------------- */
+/* Form styling */
+#status-btn:hover {
+    background-color: #c87031;
+    color: #fff;
+    border: 1px solid #fff;
+}
+/* -------------------X------------------- Status Page --------------------X------------------ */
+
+/* --------------------------------------- View Status Page --------------------------------------- */
+.back {
+    border-radius: 10px;
+    padding: 4px 50px;
+    width: auto;
+}
+
+.back:hover {
+    background-color: #4898b1;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.view {
+    font-weight: 700;
+    color: #000;
+    list-style: none;
+}
+
+.view > span, .device_title > strong {
+    color: #000;
+}
+
+.view > span {
+    font-weight: 300;
+}
+
+.device_title {
+    color: rgb(76, 86, 164);
+}
+
+/* Status box */
+.device_status {
+    background-color: rgba(255, 255, 255, 0.869);
+    width: max-content;
+    margin: 0 auto 10px auto;
+    padding: 0 60px;
+    border-radius: 60px;
+    border: 20px double #000;
+}
+
+.device_status:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+#view_status_title {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+/* -------------------X------------------- Device Status Page --------------------X------------------ */
+
+/* --------------------------------------- Success Page --------------------------------------- */
+.success-img {
+    display: block;
+    margin: 0 auto;
+    width: 270px;
+}
+
+.brand {
+    margin: 30px auto 40px auto;
+    width: 120px;
+}
+/* -------------------X------------------- Success Page --------------------X------------------ */

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/site-icon-white.svg"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./validation/validate.css">
+    <script src="./form.js" defer></script>
+    <script src="./validation/device-validate.js" defer></script>
+    <title>PluggedIn | Add</title>
+</head>
+<body>
+    <!-- Nav Bar -->
+    <header class="header-fixed">
+        <a href="./index.html"><img class="brand-logo" src="./images/brand-logo-bg-none.svg" alt="PluggedIn's brand logo" id="brand-logo"></a>
+        <nav class="navbar">
+            <a href="./index.html#about">About</a>
+            <div class="subnav">
+                <button class="subnav-btn">Device Center &#x2304</button>
+                <div class="subnav-content">
+                    <a href="./add.html">Add</a>
+                    <a href="./delete.html">Delete</a>
+                    <a href="./status.html">Status</a>
+                    <a href="./control.html">Control</a>
+                </div>
+            </div>
+            <a href="./sign_up.html" class="navbar-first-right">Sign Up</a>
+            <a href="./contact.html" class="navbar-right">Contact Us</a>
+        </nav>
+    </header>
+    <section class="main">
+        <h1>Add device.</h1>
+        <!-- Sends form data to database -->
+        <form method="POST" action="/add.html" id="add-device" onsubmit="return confirm('Are you sure you want to name the device this?');">
+            <!-- Device name -->
+            <input id="device_name" type="text" name="device_name" placeholder="Name of device" 
+            class="validate" required>
+            <p class="validate-msg">&#9888 Device name must be and contain 5 - 140 characters</p>
+            <br>
+
+            <!-- Device type -->
+            <select form="add-device" name="device_type" id="device_type" onchange="typeForm()" required>
+                <option value="" disabled selected>Select from the list of devices</option>
+                <option value="cooling and heating systems">cooling and heating systems</option>
+                <option value="curtains and blinds">curtains and blinds</option>
+                <option value="lighting">lighting</option>
+                <option value="audio-visual systems">audio-visual systems (i.e. TV, radio)</option>
+                <option value="kitchen appliances">kitchen appliances (i.e. fridge-freezer, microwave)</option>
+            </select>
+
+            <!-- On / Off -->
+            <select form="add-device" name="switch" id="switch" class="ch-system lights av-system kitchen">
+                <option value="" disabled selected>Switch on or off</option>
+                <option value=1>on</option>
+                <option value=0>off</option>
+            </select>
+
+            <!-- Adjust temperature -->
+            <label for="temp" class="ch-system kitchen range">Adjust temperature: <span 
+                id="temp-label"></span>&#176C</label>
+            <input type="range" name="temp" id="temp" class="ch-system kitchen slider" min="-40" max="250">
+
+            <!-- Adjust speed -->
+            <label for="speed" class="ch-system av-system range">Adjust speed: x<span
+                id="speed-label"></span></label>
+            <input type="range" name="speed" id="speed" class="ch-system av-system slider"  min="0.25" max="2.00" step="0.05"
+            list="1.0">
+
+            <!-- Adjust curtains -->
+            <select form="add-device" name="open_close" id="open_close" class="curtains-blinds">
+                <option value="" disabled selected>Open / Close</option>
+                <option value=1>open</option>
+                <option value=0>close</option>
+            </select>
+
+             <!-- Adjust brightness -->
+             <label for="brightness" class="lights av-system">Adjust brightness: <span 
+                id="brightness-label"></span>%</label>
+             <input type="range" name="brightness" id="brightness" class="lights av-system slider">
+
+            <!-- Colour -->
+            <select form="add-device" name="colour" id="colour" class="lights">
+                <option value="" disabled selected>Pick a colour setting</option>
+                <option value="soft white">soft white</option>
+                <option value="warm white">warm white</option>
+                <option value="neutral white">neutral white</option>
+                <option value="cool white">cool white</option>
+                <option value="daylight">daylight</option>
+            </select>
+
+            <!-- Movement pattern -->
+            <select form="add-device" name="movement_pattern" id="movement_pattern" class="lights">
+                <option value="" disabled selected>Movement pattern</option>
+                <option value="none">none</option>
+                <option value="disco">disco</option>
+                <option value="strobe">strobe</option>
+                <option value="rotate">rotating</option>
+                <option value="multi">multi</option>
+            </select>
+
+            <!-- Adjust volume -->
+             <label for="volume" class="av-system">Adjust volume: <span 
+                id="volume-label"></span>%</label>
+             <input type="range" name="volume" id="volume" class="av-system slider">
+             
+            <!-- Languages -->
+            <select form="add-device" name="language" id="language" class="av-system">
+                <option value="" disabled selected>Pick a language</option>
+                <option value="nl">Dutch</option>
+                <option value="en">English</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <option value="ig">Igbo</option>
+                <option value="ko">Korean</option>
+                <option value="ln">Lingala</option>
+                <option value="man">Mandarin</option>
+                <option value="pt">Portuguese</option>
+                <option value="es">Spanish</option>
+                <option value="tw">Twi</option>
+            </select>
+            <input id="add-btn" class="input-btn validate-btn" type="submit" value="ADD (+)">
+        </form>
+        <a href="list.html" style="text-decoration: underline;">View all devices</a>
+    </section>
+</body>
+</html>

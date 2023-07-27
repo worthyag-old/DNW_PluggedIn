@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/site-icon-white.svg"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="./view_status.js" defer></script>
+    <title>PluggedIn | View Status</title>
+</head>
+<body onload="hideNull()">
+    <!-- Nav Bar -->
+    <header class="header-fixed">
+        <a href="./index.html"><img class="brand-logo" src="./images/brand-logo-bg-none.svg" alt="PluggedIn's brand logo" id="brand-logo"></a>
+        <nav class="navbar">
+            <a href="./index.html#about">About</a>
+            <div class="subnav">
+                <button class="subnav-btn">Device Center &#x2304</button>
+                <div class="subnav-content">
+                    <a href="./add.html">Add</a>
+                    <a href="./delete.html">Delete</a>
+                    <a href="./status.html">Status</a>
+                    <a href="./control.html">Control</a>
+                </div>
+            </div>
+            <a href="./sign_up.html" class="navbar-first-right">Sign Up</a>
+            <a href="./contact.html" class="navbar-right">Contact Us</a>
+        </nav>
+    </header>
+    <section class="main">
+        <h1 id="view_status_title">View Status.</h1>
+        <!-- Display selected device's data -->
+        <% availableDevices.forEach(function(device){ %>
+            <div class="device_status">
+                <h3 class="device_title"><%= device.name %> <strong style="font-size: 40px;">| <%= device.device_type %></strong></h3>
+                <ul class="settings-group">
+                    <li class="status_ison view"  >On or off:        <span class="toShow"><%= device.is_on %></span></li>
+                    <li class="status_temp view"  >Temperature:      <span class="toShow"><%= device.temperature %></span><span>&#176C</span></li>
+                    <li class="status_speed view" >Speed:            <span>x</span><span class="toShow"><%= device.speed %></span></li>
+                    <li class="status_isopen view">Open or closed:   <span class="toShow"><%= device.is_open %></span></li>
+                    <li class="status_bright view">Brightness:       <span class="toShow"><%= device.brightness %></span><span>%</span></li>
+                    <li class="status_col view"   >Colour:           <span class="toShow"><%= device.colour %></span></li>
+                    <li class="status_mp view"    >Movement pattern: <span class="toShow"><%= device.movement_pattern %></span></li>
+                    <li class="status_vol view"   >Volume:           <span class="toShow"><%= device.volume %></span><span>%</span></li>
+                    <li class="status_lang view"  >Languages:        <span class="toShow"><%= device.languages %></span></li>
+                </ul>
+            </div>
+        <% }) %>
+        <a href="javascript:history.back()"><button class="back input-btn">Back &#x23CE</button></a>
+    </section>
+</body>
+</html>

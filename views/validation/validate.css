@@ -1,0 +1,27 @@
+/* --------------------------------------- Styling for validating forms --------------------------------------- */
+.validate {
+    outline: none!important;
+}
+
+.valid {
+    border: 2px solid #4ac26c;
+}
+  
+.invalid {
+    border: 2px solid #df7a27;
+}
+
+.validate + .validate-msg {
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    margin: 0 60px;
+    color: #df7a27;
+    display: none;
+}
+
+
+.invalid + .validate-msg {
+    display: block;
+}
+/* -------------------X------------------- Styling for validating forms --------------------X------------------ */
